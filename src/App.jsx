@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Navbar from './componets/Navbar'
-import Aboutme from './componets/About me'
-import Hero from './componets/Hero'
+
+import Navbar from './components/Navbar'
+import AboutMe from './components/AboutMe'
+import Hero from './components/Hero'
+import Skills from './components/Skill'
 import './App.css'
 
 function App() {
@@ -12,8 +12,10 @@ function App() {
   return (
     <>
      <Navbar />
-     <About me />
      <Hero />
+     <AboutMe />
+     <Skill />
+     
     </>
   )
 }

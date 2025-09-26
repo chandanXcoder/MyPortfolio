@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import { Code, Layout, Database, Server, Smartphone, Palette, GitBranch, Github } from "lucide-react";
 
 const skills = [
-  { name: "HTML", icon: <Code size={32} />, color: "text-orange-400" },
-  { name: "CSS", icon: <Palette size={32} />, color: "text-blue-400" },
-  { name: "JavaScript", icon: <Layout size={32} />, color: "text-yellow-400" },
-  { name: "React.js", icon: <Smartphone size={32} />, color: "text-cyan-400" },
-  { name: "TailwindCSS", icon: <Server size={32} />, color: "text-teal-400" },
-  { name: "Node.js", icon: <Database size={32} />, color: "text-green-400" },
-  { name: "Git", icon: <GitBranch size={32} />, color: "text-red-400" },
-  { name: "GitHub", icon: <Github size={32} />, color: "text-gray-300" },
+  { name: "HTML", icon: <Code size={28} />, color: "text-orange-400" },
+  { name: "CSS", icon: <Palette size={28} />, color: "text-blue-400" },
+  { name: "JavaScript", icon: <Layout size={28} />, color: "text-yellow-400" },
+  { name: "React.js", icon: <Smartphone size={28} />, color: "text-cyan-400" },
+  { name: "TailwindCSS", icon: <Server size={28} />, color: "text-teal-400" },
+  { name: "Node.js", icon: <Database size={28} />, color: "text-green-400" },
+  { name: "Git", icon: <GitBranch size={28} />, color: "text-red-400" },
+  { name: "GitHub", icon: <Github size={28} />, color: "text-gray-300" },
 ];
 
 const Skills = () => {

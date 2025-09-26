@@ -4,28 +4,28 @@ import { Globe, Github, Layout, Users, ShoppingBag } from "lucide-react";
 
 const projects = [
   {
-    title: "Takshsila Library",
+    title: " The Takshsila Library",
     description: "A modern self-study zone website for Takshsila Library built with clean UI and responsive design.",
     icon: <Globe size={28} />,
     link: "https://takshsila-library.vercel.app/",
     github: "https://github.com/yourusername/takshsila-library",
   },
   {
-    title: "Trim Trend",
+    title: "Hair cut Zone ",
     description: "An elegant fashion & grooming themed website showcasing modern style trends.",
     icon: <ShoppingBag size={28} />,
     link: "https://trim-trend.vercel.app/",
     github: "https://github.com/yourusername/trim-trend",
   },
   {
-    title: "Chandan Websites",
+    title: " Pradhan Mntri Awash Yojna",
     description: "A portfolio of creative website designs and concepts developed by Chandan.",
     icon: <Layout size={28} />,
     link: "https://chandan-websites.netlify.app/",
     github: "https://github.com/yourusername/chandan-websites",
   },
   {
-    title: "Chandan Team",
+    title: "The Hungry Snake Game",
     description: "A collaborative team project website with responsive UI and modern design.",
     icon: <Users size={28} />,
     link: "https://chandan-team.netlify.app/",

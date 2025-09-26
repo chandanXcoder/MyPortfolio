@@ -51,33 +51,36 @@ const Projects = () => {
           My <span className="text-indigo-400">Projects</span>
         </motion.h2>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Projects List */}
+        <div className="flex flex-col gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="flex flex-col bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-indigo-500/50 transition hover:scale-105"
+              className="flex flex-col lg:flex-row bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-indigo-500/50 transition hover:scale-[1.02]"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
             >
-              {/* Project Thumbnail Image */}
+              {/* Image Section */}
               {project.image && (
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full lg:w-1/2 h-56 object-cover"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
               )}
 
-              <div className="p-6 flex flex-col flex-grow items-center text-center">
-                <div className="mb-2 text-indigo-400">{project.icon}</div>
+              {/* Content Section */}
+              <div className="p-6 flex flex-col flex-grow text-center lg:text-left justify-center">
+                <div className="mb-2 text-indigo-400 flex justify-center lg:justify-start">
+                  {project.icon}
+                </div>
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-400 text-sm mb-4">{project.description}</p>
 
-                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                   {project.link && (
                     <a
                       href={project.link}

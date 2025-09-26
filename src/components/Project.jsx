@@ -56,7 +56,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="flex flex-col lg:flex-row bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-indigo-500/50 transition hover:scale-[1.02] max-w-4xl mx-auto"
+              className="flex flex-col bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-indigo-500/50 transition hover:scale-[1.02] max-w-4xl mx-auto h-[32rem]"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
@@ -66,7 +66,7 @@ const Projects = () => {
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full lg:w-2/5 h-80 sm:h-64 object-cover"
+                  className="w-full lg:w-3/5 h-80 sm:h-80 object-cover mx-auto"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -88,7 +88,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="px-4 py-2 text-sm bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow transition"
                     >
-                      Live Demo
+                      View Project
                     </a>
                   )}
                   {project.github && (

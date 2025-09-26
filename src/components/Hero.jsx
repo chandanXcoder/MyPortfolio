@@ -3,11 +3,21 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+    <section className="relative w-full h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.2),transparent_60%)]"></div>
 
       <div className="text-center z-10 px-4">
+        {/* Profile Photo */}
+        <motion.img
+          src="/profile.jpg" // <-- यहाँ अपनी profile photo का path दो
+          alt="Chandan Verma"
+          className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-indigo-500 shadow-xl object-cover"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1 }}
+        />
+
         {/* Animated Heading */}
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-4"
@@ -54,4 +64,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

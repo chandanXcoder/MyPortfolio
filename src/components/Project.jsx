@@ -1,35 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Github, Layout, Users, ShoppingBag } from "lucide-react";
+import { Globe, Code, Smartphone, Database, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Takshsila Library",
-    description: "A modern self-study zone website for Takshsila Library built with clean UI and responsive design.",
+    title: "Portfolio Website",
+    description: "A modern and responsive personal portfolio built using React.js and TailwindCSS with smooth animations.",
     icon: <Globe size={28} />,
-    link: "https://takshsila-library.vercel.app/",
-    github: "https://github.com/yourusername/takshsila-library",
+    link: "https://your-portfolio-link.com",
+    github: "https://github.com/yourusername/portfolio",
   },
   {
-    title: "Trim Trend",
-    description: "An elegant fashion & grooming themed website showcasing modern style trends.",
-    icon: <ShoppingBag size={28} />,
-    link: "https://trim-trend.vercel.app/",
-    github: "https://github.com/yourusername/trim-trend",
+    title: "E-Commerce Store",
+    description: "An e-commerce web app with product listing, cart, and checkout features using React and Node.js.",
+    icon: <Database size={28} />,
+    link: "https://your-ecommerce-link.com",
+    github: "https://github.com/yourusername/ecommerce",
   },
   {
-    title: "Chandan Websites",
-    description: "A portfolio of creative website designs and concepts developed by Chandan.",
-    icon: <Layout size={28} />,
-    link: "https://chandan-websites.netlify.app/",
-    github: "https://github.com/yourusername/chandan-websites",
+    title: "Mobile UI Clone",
+    description: "A responsive mobile UI clone built with React Native and styled-components.",
+    icon: <Smartphone size={28} />,
+    link: "#",
+    github: "https://github.com/yourusername/mobile-ui-clone",
   },
   {
-    title: "Chandan Team",
-    description: "A collaborative team project website with responsive UI and modern design.",
-    icon: <Users size={28} />,
-    link: "https://chandan-team.netlify.app/",
-    github: "https://github.com/yourusername/chandan-team",
+    title: "Open Source Contribution",
+    description: "Contributed to open-source projects on GitHub by fixing bugs and adding new features.",
+    icon: <Code size={28} />,
+    link: "#",
+    github: "https://github.com/yourusername",
   },
 ];
 
@@ -57,12 +57,13 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
             >
-              <div className="mb-4 text-indigo-400">{project.icon}</div>
+              <div className={`mb-4 text-indigo-400`}>{project.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-gray-400 text-sm mb-4">{project.description}</p>
 
+              {/* Links */}
               <div className="flex items-center gap-4 mt-auto">
-                {project.link && (
+                {project.link !== "#" && (
                   <a
                     href={project.link}
                     target="_blank"
@@ -72,16 +73,14 @@ const Projects = () => {
                     Live Demo
                   </a>
                 )}
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-sm border border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white rounded-lg transition"
-                  >
-                    <Github size={16} /> Code
-                  </a>
-                )}
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 text-sm border border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white rounded-lg transition"
+                >
+                  <Github size={16} /> Code
+                </a>
               </div>
             </motion.div>
           ))}

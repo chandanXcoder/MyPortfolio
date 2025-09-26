@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import AboutMe from './components/AboutMe'
 import Hero from './components/Hero'
+import Contact from './components/contact'
 // import Skills from './components/Skill'
 import './App.css'
 
@@ -15,6 +16,7 @@ function App() {
      <Hero />
      <AboutMe />
      {/* <Skill /> */}
+     <Contact />
      
     </>
   )

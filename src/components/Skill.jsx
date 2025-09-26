@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code, Layout, Database, Server, Smartphone, Palette } from "lucide-react";
+import { Code, Layout, Database, Server, Smartphone, Palette, GitBranch, Github } from "lucide-react";
 
 const skills = [
   { name: "HTML", icon: <Code size={32} />, color: "text-orange-400" },
@@ -9,6 +9,8 @@ const skills = [
   { name: "React.js", icon: <Smartphone size={32} />, color: "text-cyan-400" },
   { name: "TailwindCSS", icon: <Server size={32} />, color: "text-teal-400" },
   { name: "Node.js", icon: <Database size={32} />, color: "text-green-400" },
+  { name: "Git", icon: <GitBranch size={32} />, color: "text-red-400" },
+  { name: "GitHub", icon: <Github size={32} />, color: "text-gray-300" },
 ];
 
 const Skills = () => {
@@ -26,14 +28,14 @@ const Skills = () => {
         </motion.h2>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               className="flex flex-col items-center justify-center p-6 bg-gray-800 rounded-2xl shadow-lg hover:shadow-indigo-500/50 transition hover:scale-105"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
+              transition={{ delay: index * 0.15, duration: 0.8 }}
             >
               <div className={`mb-3 ${skill.color}`}>{skill.icon}</div>
               <h3 className="text-lg font-semibold">{skill.name}</h3>

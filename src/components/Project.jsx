@@ -39,7 +39,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gray-900 text-white">
+    <section id="projects" className="py-20 bg-black text-white">
       <div className="container mx-auto px-6">
         {/* Heading */}
         <motion.h2
@@ -51,44 +51,44 @@ const Projects = () => {
           My <span className="text-indigo-400">Projects</span>
         </motion.h2>
 
-        {/* Projects List */}
-        <div className="flex flex-col gap-10">
+        {/* Vertical Projects */}
+        <div className="flex flex-col gap-8 items-center">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="flex flex-col bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-indigo-500/50 transition hover:scale-[1.02] max-w-4xl mx-auto h-[32rem]"
+              className="flex flex-col md:flex-row bg-black rounded-2xl shadow-lg w-full md:w-3/4 hover:shadow-indigo-500/50 transition hover:scale-105"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
             >
-              {/* Image Section */}
+              {/* Project Image */}
               {project.image && (
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full lg:w-3/5 h-80 sm:h-80 object-cover mx-auto"
+                  className="w-full md:w-64 h-64 object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
               )}
 
-              {/* Content Section */}
-              <div className="p-6 flex flex-col flex-grow text-center lg:text-left justify-center">
-                <div className="mb-2 text-indigo-400 flex justify-center lg:justify-start">
-                  {project.icon}
+              {/* Content */}
+              <div className="p-6 flex flex-col justify-between flex-grow text-center md:text-left">
+                <div>
+                  <div className="mb-2 text-indigo-400">{project.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-400 text-sm">{project.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
 
-                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-auto">
                   {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 text-sm bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow transition"
+                      className="px-4 py-2 text-sm bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow transition text-center"
                     >
-                      View Project
+                      Live Demo
                     </a>
                   )}
                   {project.github && (

@@ -10,7 +10,7 @@ const AboutMe = () => {
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1e293b,_transparent_70%)] opacity-40 pointer-events-none"></div>
 
-      <div className="relative max-w-4xl mx-auto text-center space-y-6">
+      <div className="relative max-w-5xl mx-auto text-center space-y-8">
         {/* Animated Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -21,6 +21,20 @@ const AboutMe = () => {
           About Me
         </motion.h2>
 
+        {/* Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex justify-center"
+        >
+          <img
+            src="/profile.jpg" // 👉 apna photo "public/profile.jpg" me save kar lena
+            alt="Chandan Verma"
+            className="w-40 h-40 rounded-full border-4 border-indigo-500 shadow-xl object-cover"
+          />
+        </motion.div>
+
         {/* Intro Paragraph */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -30,44 +44,54 @@ const AboutMe = () => {
         >
           Hi! I’m{" "}
           <span className="text-indigo-400 font-semibold">Chandan Verma</span>,  
-          a passionate <span className="text-indigo-400">Web Developer</span> and currently 
-          pursuing <span className="text-indigo-400 font-semibold">B.Tech in Computer Science & Engineering</span>.  
-          I enjoy building visually appealing, responsive, and functional websites that transform 
-          ideas into reality. My focus is always on writing clean code and delivering quality results.
+          a dedicated <span className="text-indigo-400">Web Developer</span> and  
+          <span className="text-indigo-400 font-semibold"> B.Tech CSE student </span>  
+          at <span className="text-indigo-400">Invertis University, Bareilly, Uttar Pradesh</span>.  
+          I love creating responsive, user-friendly websites and web apps that not only look
+          great but also deliver real value.
         </motion.p>
 
-        {/* Extra Personal Line */}
+        {/* Extra Personal Lines */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="text-md md:text-lg text-gray-400"
         >
-          I’m also an open-source enthusiast and love sharing my projects on{" "}
-          <a
-            href="https://github.com/chandanXcoder"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-300 underline hover:text-indigo-400 transition"
-          >
-            GitHub
-          </a>.  
-          My aim is to grow as a full-stack developer and build impactful digital products.
+          I specialize in <span className="text-indigo-300">Frontend Development</span> with 
+          strong knowledge of <span className="text-indigo-300">React.js, Tailwind CSS, and JavaScript</span>.  
+          I’m also learning backend technologies like <span className="text-indigo-300">Node.js</span> and aim to 
+          grow as a full-stack developer.  
+          Apart from coding, I’m passionate about <span className="text-indigo-300">UI/UX design</span>, 
+          open-source projects, and continuous self-learning.
         </motion.p>
 
-        {/* Skills Section with Glow & Flex Animation */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          className="text-md md:text-lg text-gray-400"
+        >
+          I believe in teamwork, problem-solving, and building digital solutions that can 
+          positively impact people’s lives.  
+          My long-term vision is to contribute to large-scale tech innovations while 
+          growing as a professional developer.
+        </motion.p>
+
+        {/* Skills / Highlights */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
+          transition={{ duration: 1, delay: 0.8 }}
           className="flex flex-wrap justify-center gap-4 mt-8"
         >
           {[
             "HTML • CSS • JavaScript",
             "React.js • Tailwind CSS",
+            "Node.js (Basics)",
             "UI/UX Design",
+            "Git • GitHub • Version Control",
             "C • C++ • Python (Basics)",
-            "GitHub • Version Control",
           ].map((skill, index) => (
             <motion.span
               key={index}

@@ -27,7 +27,7 @@ const Contact = () => {
     
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       setFormData({
         name: "",
         email: "",
@@ -36,7 +36,6 @@ const Contact = () => {
         company: "",
         projectType: ""
       });
-      
       setTimeout(() => setSubmitStatus(null), 5000);
     }, 2000);
   };
@@ -62,29 +61,16 @@ const Contact = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#312e81_0%,_transparent_50%)] opacity-40 pointer-events-none"></div>
 
       <div className="relative max-w-3xl w-full">
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        {/* Short Line Instead of Big Header */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center text-xl text-gray-300 mb-10"
         >
-          <motion.h2
-            className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
-          >
-            Let's Work Together
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
-          >
-            Have a project in mind? I'm always excited to discuss new opportunities and bring innovative ideas to life.
-          </motion.p>
-        </motion.div>
+          💡 Have an idea or project? Share your thoughts below and let’s make it real.
+        </motion.p>
 
         {/* Contact Form */}
         <motion.div
@@ -195,7 +181,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Tell me about your project requirements, timeline, and any specific features you need..."
+                  placeholder="Tell me about your project requirements..."
                 ></textarea>
               </div>
 
@@ -206,30 +192,20 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 px-6 rounded-lg font-semibold text-white transition-all duration-300 ${
                   isSubmitting
-                    ? 'bg-gray-600 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 shadow-lg hover:shadow-xl"
                 }`}
               >
-                {isSubmitting ? (
-                  <div className="flex items-center justify-center gap-3">
-                    <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending Message...
-                  </div>
-                ) : (
-                  'Send Message'
-                )}
+                {isSubmitting ? "Sending Message..." : "Send Message"}
               </motion.button>
 
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-500/20 border border-green-400/50 rounded-lg text-green-400 text-sm"
                 >
-                  ✓ Message sent successfully! I'll get back to you within 24 hours.
+                  ✓ Message sent successfully! I'll get back to you soon.
                 </motion.div>
               )}
             </form>

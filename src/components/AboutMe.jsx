@@ -21,7 +21,7 @@ const AboutMe = () => {
           About Me
         </motion.h2>
 
-        {/* Photo */}
+        {/* Rectangle Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -31,7 +31,7 @@ const AboutMe = () => {
           <img
             src="/profile.jpg" // 👉 apna photo "public/profile.jpg" me save kar lena
             alt="Chandan Verma"
-            className="w-40 h-40 rounded-full border-4 border-indigo-500 shadow-xl object-cover"
+            className="w-60 h-72 object-cover shadow-2xl rounded-lg"
           />
         </motion.div>
 

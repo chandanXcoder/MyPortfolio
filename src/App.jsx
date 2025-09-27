@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Contact from './components/contact'
 import Skill from './components/Skill'
 import Project from './components/Project'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
      <Skill />
      <Project />
      <Contact />
+     <Footer />
      
     </>
   )

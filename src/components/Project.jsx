@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Github, Code2, Layout, BookOpen, Users } from "lucide-react";
+import { Globe, Github, Code2, Layout, BookOpen, Users, Home, Gamepad2 } from "lucide-react";
 
 const projects = [
   {
@@ -12,17 +12,17 @@ const projects = [
     color: "from-blue-500 to-cyan-600",
   },
   {
-    title: " Padhan Mantri Awash Yojna",
-    description: "A clean and simple personal website showcasing profile details, work experience, contact information, and testimonials .",
-    icon: <Layout size={28} />,
+    title: "Pradhan Mantri Awas Yojana",
+    description: "A clean and simple personal website showcasing profile details, work experience, contact information, and testimonials.",
+    icon: <Home size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-websites.netlify.app/",
-    color: "from-indigo-500 to-purple-600",
+    color: "from-orange-500 to-red-600",
   },
   {
     title: "The Hungry Snake Game",
-    description: " A classic Snake Game Control the snake with arrow keys, eat food to grow, and avoid crashing into walls or yourself.",
-    icon: <Users size={28} />,
+    description: "A classic Snake Game. Control the snake with arrow keys, eat food to grow, and avoid crashing into walls or yourself.",
+    icon: <Gamepad2 size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-team.netlify.app/",
     color: "from-green-400 to-emerald-600",

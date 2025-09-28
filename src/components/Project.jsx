@@ -1,31 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Github, Code2, Layout } from "lucide-react";
+import { Globe, Github, Code2, Layout, BookOpen, Users } from "lucide-react";
 
 const projects = [
   {
-    title: "Portfolio Website",
-    description: "A modern responsive portfolio website built with React and Tailwind CSS.",
+    title: "Takshsila Library",
+    description: "A comprehensive digital library platform with book management and user authentication system.",
+    icon: <BookOpen size={28} />,
+    github: "https://github.com/chandanXcoder",
+    demo: "https://takshsila-library.vercel.app/",
+    color: "from-blue-500 to-cyan-600",
+  },
+  {
+    title: " Padhan Mantri Awash Yojna",
+    description: "A clean and simple personal website showcasing profile details, work experience, contact information, and testimonials .",
     icon: <Layout size={28} />,
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://yourportfolio.com",
+    github: "https://github.com/chandanXcoder",
+    demo: "https://chandan-websites.netlify.app/",
     color: "from-indigo-500 to-purple-600",
   },
   {
-    title: "E-Commerce Store",
-    description: "Full-stack e-commerce web app with product catalog and checkout system.",
-    icon: <Globe size={28} />,
-    github: "https://github.com/yourusername/ecommerce",
-    demo: "https://myecommerce.com",
+    title: "The Hungry Snake Game",
+    description: " A classic Snake Game Control the snake with arrow keys, eat food to grow, and avoid crashing into walls or yourself.",
+    icon: <Users size={28} />,
+    github: "https://github.com/chandanXcoder",
+    demo: "https://chandan-team.netlify.app/",
     color: "from-green-400 to-emerald-600",
-  },
-  {
-    title: "React UI Components",
-    description: "A reusable UI component library made with React and Tailwind.",
-    icon: <Code2 size={28} />,
-    github: "https://github.com/yourusername/react-ui",
-    demo: "#",
-    color: "from-yellow-400 to-orange-500",
   },
 ];
 
@@ -38,7 +38,7 @@ const Project = () => {
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_#312e81_0%,_transparent_50%)] opacity-40"></div>
-
+      
       <div className="relative max-w-6xl w-full text-center">
         {/* Heading */}
         <motion.h2
@@ -50,7 +50,7 @@ const Project = () => {
         >
           My Projects
         </motion.h2>
-
+        
         {/* Project Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
@@ -71,14 +71,14 @@ const Project = () => {
                 <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
                 <p className="text-gray-300 text-sm">{project.description}</p>
               </div>
-
+              
               {/* Buttons */}
               <div className="flex justify-center gap-4 mt-6">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm flex items-center gap-2"
+                  className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm flex items-center gap-2 transition-colors duration-300"
                 >
                   <Github size={18} /> Code
                 </a>
@@ -86,7 +86,7 @@ const Project = () => {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm"
+                  className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm transition-colors duration-300"
                 >
                   View Project
                 </a>

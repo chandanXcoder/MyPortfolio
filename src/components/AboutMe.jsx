@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import chandImage from "../assets/chand.jpg";
 
 const AboutMe = () => {
   return (
@@ -29,7 +30,7 @@ const AboutMe = () => {
           className="flex justify-center"
         >
           <img
-            src="/chandan.jpg" // 👉 apna photo "public/profile.jpg" me save kar lena
+            src={chandImage}
             alt="Chandan Verma"
             className="w-60 h-72 object-cover shadow-2xl rounded-lg"
           />

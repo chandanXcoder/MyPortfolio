@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="w-48 h-48 rounded-full shadow-lg overflow-hidden mb-6">
             <img
-              src="/profile.jpg" // अपनी image का path डालें
+              src="/chandan.jpg" // अपनी image का path डालें
               alt="Chandan Verma"
               className="w-full h-full object-cover"
             />

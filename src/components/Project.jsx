@@ -1,107 +1,95 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Github, Layout, Users, ShoppingBag } from "lucide-react";
+import { Globe, Github, Code2, Layout } from "lucide-react";
 
 const projects = [
   {
-    title: "The Takshsila Library",
-    description: "A modern self-study zone website for Takshsila Library built with clean UI and responsive design.",
-    icon: <Globe size={20} />,
-    link: "https://takshsila-library.vercel.app/",
-    github: "https://github.com/yourusername/takshsila-library",
-    image: "/images/takshsila-library.png",
+    title: "Portfolio Website",
+    description: "A modern responsive portfolio website built with React and Tailwind CSS.",
+    icon: <Layout size={28} />,
+    github: "https://github.com/yourusername/portfolio",
+    demo: "https://yourportfolio.com",
+    color: "from-indigo-500 to-purple-600",
   },
   {
-    title: "Hair cut Zone",
-    description: "An elegant fashion & grooming themed website showcasing modern style trends.",
-    icon: <ShoppingBag size={20} />,
-    link: "https://trim-trend.vercel.app/",
-    github: "https://github.com/yourusername/trim-trend",
-    image: "/images/trim-trend.png",
+    title: "E-Commerce Store",
+    description: "Full-stack e-commerce web app with product catalog and checkout system.",
+    icon: <Globe size={28} />,
+    github: "https://github.com/yourusername/ecommerce",
+    demo: "https://myecommerce.com",
+    color: "from-green-400 to-emerald-600",
   },
   {
-    title: "Pradhan Mntri Awash Yojna",
-    description: "A portfolio of creative website designs and concepts developed by Chandan.",
-    icon: <Layout size={20} />,
-    link: "https://chandan-websites.netlify.app/",
-    github: "https://github.com/yourusername/chandan-websites",
-    image: "/images/chandan-websites.png",
-  },
-  {
-    title: "The Hungry Snake Game",
-    description: "A collaborative team project website with responsive UI and modern design.",
-    icon: <Users size={20} />,
-    link: "https://chandan-team.netlify.app/",
-    github: "https://github.com/yourusername/chandan-team",
-    image: "/images/chandan-team.png",
+    title: "React UI Components",
+    description: "A reusable UI component library made with React and Tailwind.",
+    icon: <Code2 size={28} />,
+    github: "https://github.com/yourusername/react-ui",
+    demo: "#",
+    color: "from-yellow-400 to-orange-500",
   },
 ];
 
-const Projects = () => {
+const Project = () => {
   return (
-    <section id="projects" className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-6">
+    <section
+      id="projects"
+      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20 px-6 flex items-center justify-center"
+    >
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_#312e81_0%,_transparent_50%)] opacity-40"></div>
+
+      <div className="relative max-w-6xl w-full text-center">
         {/* Heading */}
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold mb-14 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
         >
-          My <span className="text-indigo-400">Projects</span>
+          My Projects
         </motion.h2>
 
-        {/* Vertical Projects */}
-        <div className="flex flex-col gap-8 items-center">
+        {/* Project Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="flex flex-col md:flex-row bg-black rounded-2xl shadow-lg w-full md:w-3/4 hover:shadow-indigo-500/50 transition hover:scale-105"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
+              initial={{ opacity: 0, scale: 0.85 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300 flex flex-col justify-between"
             >
-              {/* Project Image */}
-              {project.image && (
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full md:w-64 h-64 object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-              )}
-
-              {/* Content */}
-              <div className="p-6 flex flex-col justify-between flex-grow text-center md:text-left">
-                <div>
-                  <div className="mb-2 text-indigo-400">{project.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-400 text-sm">{project.description}</p>
+              <div>
+                <div
+                  className={`w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${project.color} text-white mb-4 mx-auto`}
+                >
+                  {project.icon}
                 </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
+                <p className="text-gray-300 text-sm">{project.description}</p>
+              </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-auto">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 text-sm bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow transition text-center"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-4 py-2 text-sm border border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white rounded-lg transition"
-                    >
-                      <Github size={16} /> Code
-                    </a>
-                  )}
-                </div>
+              {/* Buttons */}
+              <div className="flex justify-center gap-4 mt-6">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm flex items-center gap-2"
+                >
+                  <Github size={18} /> Code
+                </a>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm"
+                >
+                  View Project
+                </a>
               </div>
             </motion.div>
           ))}
@@ -110,4 +98,5 @@ const Projects = () => {
     </section>
   );
 };
-export default Projects;
+
+export default Project;

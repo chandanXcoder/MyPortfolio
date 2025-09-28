@@ -1,92 +1,104 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+
+const roles = ["Web Developer", "Open Source Contributor"];
 
 const Hero = () => {
-  // Rotating Subheadings after "A Passionate"
-  const rotatingTexts = [
-    "Web Developer",
-    "Full Stack Learner",
-    "Tech Enthusiast",
-    "Open Source Contributor",
-    "UI/UX Designer",
-  ];
   const [index, setIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setIndex((prev) => (prev + 1) % rotatingTexts.length),
-      3000
-    );
-    return () => clearInterval(interval);
-  }, []);
+    let typingSpeed = isDeleting ? 60 : 120;
+    const currentText = roles[index];
+    let timeout;
+
+    if (!isDeleting && displayText.length < currentText.length) {
+      timeout = setTimeout(() => {
+        setDisplayText(currentText.substring(0, displayText.length + 1));
+      }, typingSpeed);
+    } else if (isDeleting && displayText.length > 0) {
+      timeout = setTimeout(() => {
+        setDisplayText(currentText.substring(0, displayText.length - 1));
+      }, typingSpeed);
+    } else if (!isDeleting && displayText.length === currentText.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1500);
+    } else if (isDeleting && displayText.length === 0) {
+      setIsDeleting(false);
+      setIndex((prev) => (prev + 1) % roles.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, index]);
 
   return (
-    <section className="relative w-full h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-900 px-8"
+    >
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.2),transparent_60%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_#312e81_0%,_transparent_50%)] opacity-40"></div>
 
-      <div className="text-center z-10 px-4">
-        {/* Welcome Line */}
-        <motion.h1
-          className="text-3xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 tracking-wide"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          👋 Welcome to My Amazing Website
-        </motion.h1>
-
-        {/* Profile Photo */}
-        <motion.img
-          src="/profile.jpg"
-          alt="Chandan Verma"
-          className="w-48 h-48 md:w-56 md:h-56 rounded-full mx-auto mb-6 border-2 border-indigo-400 shadow-lg object-cover"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1 }}
-        />
-
-        {/* Animated Heading */}
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-6 text-gray-100 flex justify-center gap-2 flex-wrap"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <span>A Passionate</span>
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.6 }}
-              className="text-indigo-400"
-            >
-              {rotatingTexts[index]}
-            </motion.span>
-          </AnimatePresence>
-        </motion.h2>
-
-        {/* Buttons */}
+      <div className="relative max-w-7xl w-full grid md:grid-cols-2 items-center gap-12">
+        {/* Left Content */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mt-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-left"
         >
-          <a
-            href="#projects"
-            className="px-8 py-4 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium shadow-lg transition text-lg"
-          >
-            View My Work
-          </a>
-          <a
-            href="#contact"
-            className="px-8 py-4 rounded-full border border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white font-medium shadow-lg transition text-lg"
-          >
-            Contact Me
-          </a>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Welcome to My Portfolio
+          </h1>
+        </motion.div>
+
+        {/* Right Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center text-center"
+        >
+          {/* Profile Image */}
+          <div className="w-48 h-48 rounded-full shadow-lg overflow-hidden mb-6">
+            <img
+              src="/profile.jpg" // अपनी image का path डालें
+              alt="Chandan Verma"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Name */}
+          <p className="text-4xl md:text-5xl font-bold text-white mb-3">
+            I'm <span className="text-indigo-400">Chandan Verma</span>
+          </p>
+
+          {/* Typing Animation Role */}
+          <p className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent h-10">
+            {displayText}
+            <span className="animate-pulse text-white">|</span>
+          </p>
+
+          {/* Buttons */}
+          <div className="flex gap-4 mt-6">
+            <a
+              href="/resume.pdf" // यहाँ अपना resume file path डालें
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 text-white text-lg font-medium shadow-md transition-all"
+            >
+              Resume
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-lg border border-gray-500 text-gray-200 hover:bg-gray-700 transition-all text-lg font-medium"
+            >
+              Contact Me
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

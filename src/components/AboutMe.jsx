@@ -29,7 +29,7 @@ const AboutMe = () => {
           className="flex justify-center"
         >
           <img
-            src="/profile.jpg" // 👉 apna photo "public/profile.jpg" me save kar lena
+            src="/chandan.jpg" // 👉 apna photo "public/profile.jpg" me save kar lena
             alt="Chandan Verma"
             className="w-60 h-72 object-cover shadow-2xl rounded-lg"
           />

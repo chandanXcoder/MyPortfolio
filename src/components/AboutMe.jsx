@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import chandImage from "../assets/chand.jpg";
 
 const AboutMe = () => {
   return (

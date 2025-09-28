@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import chandanImage from "../assets/chandan.jpg";
 
 const roles = ["Web Developer", "Open Source Contributor"];
 
@@ -66,7 +65,7 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="w-48 h-48 rounded-full shadow-lg overflow-hidden mb-6">
             <img
-              src={chandanImage}
+              src="/chandan.jpg" // अपनी image का path डालें
               alt="Chandan Verma"
               className="w-full h-full object-cover"
             />

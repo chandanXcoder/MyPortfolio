@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 px-8 pt-24 md:pt-28"
+      className="relative min-h-screen flex items-start md:items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-900 px-8 pt-24 md:pt-28"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#1e293b_0%,_transparent_60%)] opacity-60"></div>

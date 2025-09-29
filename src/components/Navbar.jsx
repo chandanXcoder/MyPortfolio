@@ -60,13 +60,13 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800"
           >
-            <div className="flex flex-col items-center gap-6 py-6">
+            <div className="flex flex-col items-center gap-4 py-4 px-4">
               {navLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-indigo-400 font-medium transition-colors text-lg"
+                  className="text-gray-300 hover:text-indigo-400 font-medium transition-colors text-base py-2 px-4 w-full text-center rounded-lg hover:bg-gray-800/50"
                 >
                   {link.name}
                 </a>

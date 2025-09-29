@@ -45,7 +45,7 @@ const Skill = () => {
         </motion.h2>
 
         {/* Skill Cards */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -53,14 +53,14 @@ const Skill = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="w-36 h-36 flex flex-col items-center justify-center rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300"
+              className="w-full h-28 sm:h-32 md:h-36 flex flex-col items-center justify-center rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300"
             >
               <div
-                className={`w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${skill.color} text-white mb-3`}
+                className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${skill.color} text-white mb-2 sm:mb-3`}
               >
                 {skill.icon}
               </div>
-              <p className="text-white font-medium">{skill.name}</p>
+              <p className="text-white font-medium text-xs sm:text-sm md:text-base text-center px-1">{skill.name}</p>
             </motion.div>
           ))}
         </div>

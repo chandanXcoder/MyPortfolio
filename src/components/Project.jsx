@@ -52,7 +52,7 @@ const Project = () => {
         </motion.h2>
         
         {/* Project Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -60,33 +60,33 @@ const Project = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300 flex flex-col justify-between"
+              className="p-4 sm:p-6 rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div
-                  className={`w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${project.color} text-white mb-4 mx-auto`}
+                  className={`w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${project.color} text-white mb-3 sm:mb-4 mx-auto`}
                 >
                   {project.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 text-sm">{project.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 text-center">{project.title}</h3>
+                <p className="text-gray-300 text-xs sm:text-sm text-center leading-relaxed">{project.description}</p>
               </div>
               
               {/* Buttons */}
-              <div className="flex justify-center gap-4 mt-6">
+              <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm flex items-center gap-2 transition-colors duration-300"
+                  className="px-3 sm:px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors duration-300"
                 >
-                  <Github size={18} /> Code
+                  <Github size={16} /> Code
                 </a>
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm transition-colors duration-300"
+                  className="px-3 sm:px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm transition-colors duration-300 text-center"
                 >
                   View Project
                 </a>

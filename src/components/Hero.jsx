@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-900 px-8"
+      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 px-8 pt-24 md:pt-28"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
@@ -48,10 +48,10 @@ const Hero = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-left"
+          className="text-center md:text-left"
         >
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Welcome to My Portfolio
+            Welcome to my portfolio
           </h1>
         </motion.div>
 

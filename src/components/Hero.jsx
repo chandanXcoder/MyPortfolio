@@ -41,16 +41,16 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_#312e81_0%,_transparent_50%)] opacity-40"></div>
 
-      <div className="relative max-w-7xl w-full grid md:grid-cols-2 items-center gap-12">
+      <div className="relative max-w-7xl w-full grid lg:grid-cols-2 items-center gap-8 lg:gap-12">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-left"
+          className="text-center lg:text-left order-2 lg:order-1"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 lg:mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
             Welcome to My Portfolio
           </h1>
         </motion.div>
@@ -61,10 +61,10 @@ const Hero = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center text-center"
+          className="flex flex-col items-center justify-center text-center order-1 lg:order-2"
         >
           {/* Profile Image */}
-          <div className="w-48 h-48 rounded-full shadow-lg overflow-hidden mb-6">
+          <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full shadow-lg overflow-hidden mb-4 lg:mb-6">
             <img
               src={chandanImage}
               alt="Chandan Verma"
@@ -73,29 +73,29 @@ const Hero = () => {
           </div>
 
           {/* Name */}
-          <p className="text-4xl md:text-5xl font-bold text-white mb-3">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 lg:mb-3">
             I'm <span className="text-indigo-400">Chandan Verma</span>
           </p>
 
           {/* Typing Animation Role */}
-          <p className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent h-10">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent h-8 sm:h-10 mb-4 lg:mb-6">
             {displayText}
             <span className="animate-pulse text-white">|</span>
           </p>
 
           {/* Buttons */}
-          <div className="flex gap-4 mt-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             <a
               href="/resume.pdf" // यहाँ अपना resume file path डालें
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 text-white text-lg font-medium shadow-md transition-all"
+              className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 text-white text-base sm:text-lg font-medium shadow-md transition-all text-center"
             >
               Resume
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 rounded-lg border border-gray-500 text-gray-200 hover:bg-gray-700 transition-all text-lg font-medium"
+              className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg border border-gray-500 text-gray-200 hover:bg-gray-700 transition-all text-base sm:text-lg font-medium text-center"
             >
               Contact Me
             </a>

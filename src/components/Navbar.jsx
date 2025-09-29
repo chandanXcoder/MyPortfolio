@@ -14,26 +14,26 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.a
           href="#hero"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400"
+          className="text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400"
         >
           Chandan
         </motion.a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex gap-6 lg:gap-8">
           {navLinks.map((link, index) => (
             <motion.a
               key={index}
               href={link.href}
               whileHover={{ scale: 1.1 }}
-              className="text-gray-300 hover:text-indigo-400 font-medium transition-colors"
+              className="text-gray-300 hover:text-indigo-400 font-medium transition-colors text-sm lg:text-base"
             >
               {link.name}
             </motion.a>
@@ -43,9 +43,10 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-300 hover:text-white transition"
+          className="md:hidden text-gray-300 hover:text-white transition p-2 -mr-2"
+          aria-label="Toggle mobile menu"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 

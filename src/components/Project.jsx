@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Github, Code2, Layout, BookOpen, Users, Home, Gamepad2 } from "lucide-react";
+import { Globe, Github, Code2, Layout, BookOpen, Users, Home, Gamepad2, Scissors } from "lucide-react";
 
 const projects = [
   {
@@ -26,6 +26,14 @@ const projects = [
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-team.netlify.app/",
     color: "from-green-400 to-emerald-600",
+  },
+  {
+    title: "Hair Cut Zone (Baraily)",
+    description: "A modern and stylish salon website with booking features, showcasing services and customer-friendly UI.",
+    icon: <Scissors size={28} />,
+    github: "https://github.com/chandanXcoder",
+    demo: "https://trim-trend.vercel.app/",
+    color: "from-pink-500 to-rose-600",
   },
 ];
 

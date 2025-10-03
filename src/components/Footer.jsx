@@ -23,7 +23,7 @@ const Footer = () => {
                 Chandan Verma
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                I   Computer Science Engineering Student
+                I'm a Computer Science Engineering Student
               </p>
               <p className="text-gray-400 leading-relaxed max-w-lg">
                 Specializing in modern web technologies and creating scalable, user-centric applications. 

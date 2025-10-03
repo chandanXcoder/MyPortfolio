@@ -23,7 +23,7 @@ const Footer = () => {
                 Chandan Verma
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                I'm a Computer Science Engineering Student
+                Full-Stack Developer & Computer Science Engineering Student
               </p>
               <p className="text-gray-400 leading-relaxed max-w-lg">
                 Specializing in modern web technologies and creating scalable, user-centric applications. 
@@ -48,7 +48,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
-                <span>India</span>
+                <span>Bareilly, Uttar Pradesh, India</span>
               </div>
               <a 
                 href="tel:+918103077970"

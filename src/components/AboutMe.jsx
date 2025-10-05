@@ -23,7 +23,7 @@ const AboutMe = () => {
           <img
             src={chandImage}
             alt="Chandan Verma"
-            className="w-64 h-80 object-cover shadow-2xl rounded-xl border border-indigo-500/40"
+            className="w-80 h-96 object-cover shadow-2xl rounded-2xl border border-indigo-500/40 hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
 

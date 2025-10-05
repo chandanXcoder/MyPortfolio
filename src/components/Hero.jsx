@@ -35,11 +35,10 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-start md:items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-900 px-8 pt-24 md:pt-28"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 px-8 pt-24 md:pt-28 text-white"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_#312e81_0%,_transparent_50%)] opacity-40"></div>
+      {/* Background Glow (merged with About section style) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1e293b_0%,_transparent_70%)] opacity-50"></div>
 
       <div className="relative max-w-7xl w-full grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}
@@ -64,7 +63,7 @@ const Hero = () => {
           className="flex flex-col items-center justify-center text-center"
         >
           {/* Profile Image */}
-          <div className="w-48 h-48 rounded-full shadow-lg overflow-hidden mb-6">
+          <div className="w-56 h-56 md:w-64 md:h-64 rounded-full shadow-lg overflow-hidden mb-6 border border-indigo-500/40 hover:scale-105 transition-transform duration-500">
             <img
               src={chandanImage}
               alt="Chandan Verma"
@@ -86,16 +85,16 @@ const Hero = () => {
           {/* Buttons */}
           <div className="flex gap-4 mt-6">
             <a
-              href="/resume.pdf" // यहाँ अपना resume file path डालें
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 text-white text-lg font-medium shadow-md transition-all"
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-90 text-white text-lg font-medium shadow-md transition-all"
             >
               Resume
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 rounded-lg border border-gray-500 text-gray-200 hover:bg-gray-700 transition-all text-lg font-medium"
+              className="px-6 py-3 rounded-lg border border-gray-500 text-gray-200 hover:bg-gray-800 transition-all text-lg font-medium"
             >
               Contact Me
             </a>

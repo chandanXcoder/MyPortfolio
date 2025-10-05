@@ -23,7 +23,7 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           className="text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400"
         >
-          Chandan
+          Chandan Verma
         </motion.a>
 
         {/* Desktop Menu */}

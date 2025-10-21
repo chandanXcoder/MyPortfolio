@@ -201,8 +201,6 @@ const Footer = () => {
           className="fixed bottom-8 right-8 p-4 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 shadow-2xl border border-indigo-400/20 backdrop-blur-sm"
           aria-label="Back to top"
         >
-
-          
           <svg 
             className="w-6 h-6 text-white"
             fill="none"

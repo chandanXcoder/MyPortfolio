@@ -221,7 +221,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-f

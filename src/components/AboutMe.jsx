@@ -6,9 +6,9 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white px-6 py-20"
+      className="relative flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white px-6 pt-20 pb-0"
     >
-      {/* Same background glow as Hero for smooth merging */}
+      {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1e293b,_transparent_70%)] opacity-50 pointer-events-none"></div>
 
       <div className="relative max-w-6xl w-full grid md:grid-cols-2 items-center gap-12">

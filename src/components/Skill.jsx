@@ -26,7 +26,7 @@ const Skill = () => {
   return (
     <section
       id="skills"
-      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20 px-6 flex items-center justify-center"
+      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16 md:py-20 px-6 flex items-center justify-center mt-0"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
@@ -45,7 +45,7 @@ const Skill = () => {
         </motion.h2>
 
         {/* Skill Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -60,7 +60,7 @@ const Skill = () => {
               >
                 {skill.icon}
               </div>
-              <p className="text-white font-medium text-xs sm:text-sm md:text-base text-center px-1">{skill.name}</p>
+              <p className="text-white font-medium text-sm md:text-base text-center">{skill.name}</p>
             </motion.div>
           ))}
         </div>

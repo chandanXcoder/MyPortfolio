@@ -23,7 +23,7 @@ const Footer = () => {
                 Chandan Verma
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Full-Stack Developer & Computer Science Engineering Student
+                 Developer & Computer Science Engineering Student
               </p>
               <p className="text-gray-400 leading-relaxed max-w-lg">
                 Specializing in modern web technologies and creating scalable, user-centric applications. 

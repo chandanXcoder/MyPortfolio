@@ -124,6 +124,7 @@ const Contact = () => {
             )}
           </form>
         </motion.div>
+        
         {/* Social Icon */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

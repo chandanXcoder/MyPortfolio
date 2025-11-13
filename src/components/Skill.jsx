@@ -26,11 +26,13 @@ const Skill = () => {
   return (
     <section
       id="skills"
-      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16 md:py-20 px-6 flex items-center justify-center mt-0"
+      className="relative flex items-center justify-center min-h-screen bg-slate-950 text-white px-6 py-20 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_#312e81_0%,_transparent_50%)] opacity-40"></div>
+      {/* Professional Grid Pattern Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      
+      {/* Subtle Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
 
       <div className="relative max-w-5xl w-full text-center">
         {/* Heading */}
@@ -39,7 +41,7 @@ const Skill = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-14 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold mb-14 text-indigo-400"
         >
           My Skills
         </motion.h2>
@@ -53,7 +55,7 @@ const Skill = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="w-full h-28 sm:h-32 md:h-36 flex flex-col items-center justify-center rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300"
+              className="w-full h-28 sm:h-32 md:h-36 flex flex-col items-center justify-center rounded-2xl bg-gray-800/40 border border-indigo-500/40 shadow-2xl hover:scale-105 hover:border-indigo-400 transition-all duration-500"
             >
               <div
                 className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${skill.color} text-white mb-2 sm:mb-3`}

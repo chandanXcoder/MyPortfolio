@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Github, Code2, Layout, BookOpen, Users, Home, Gamepad2, Scissors } from "lucide-react";
+import { Github, BookOpen, Home, Gamepad2, Scissors } from "lucide-react";
 
 const projects = [
   {
     title: "Takshsila Library",
-    description: "A comprehensive digital library platform with book management and user authentication system.",
+    description:
+      "A comprehensive digital library platform with book management and user authentication system.",
     icon: <BookOpen size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://takshsila-library.vercel.app/",
@@ -13,7 +14,8 @@ const projects = [
   },
   {
     title: "Pradhan Mantri Awas Yojana",
-    description: "A clean and simple personal website showcasing profile details, work experience, contact information, and testimonials.",
+    description:
+      "A clean and simple personal website showcasing profile details, work experience, contact information, and testimonials.",
     icon: <Home size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-websites.netlify.app/",
@@ -21,7 +23,8 @@ const projects = [
   },
   {
     title: "The Hungry Snake Game",
-    description: "A classic Snake Game. Control the snake with arrow keys, eat food to grow, and avoid crashing into walls or yourself.",
+    description:
+      "A classic Snake Game. Control the snake with arrow keys, eat food to grow, and avoid crashing into walls or yourself.",
     icon: <Gamepad2 size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-team.netlify.app/",
@@ -29,7 +32,8 @@ const projects = [
   },
   {
     title: "Hair Cut Zone (Baraily)",
-    description: "A modern and stylish salon website with booking features, showcasing services and customer-friendly UI.",
+    description:
+      "A modern and stylish salon website with booking features, showcasing services and customer-friendly UI.",
     icon: <Scissors size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://trim-trend.vercel.app/",
@@ -41,13 +45,15 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20 px-6 flex items-center justify-center"
+      className="relative min-h-screen bg-slate-950 py-20 px-6 flex items-center justify-center overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e293b_0%,_transparent_60%)] opacity-60"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_#312e81_0%,_transparent_50%)] opacity-40"></div>
-      
-      <div className="relative max-w-6xl w-full text-center">
+      {/* 🩵 Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+
+      {/* 🔷 Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-transparent to-indigo-950/50"></div>
+
+      <div className="relative max-w-6xl w-full text-center text-white">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +64,7 @@ const Project = () => {
         >
           My Projects
         </motion.h2>
-        
+
         {/* Project Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {projects.map((project, index) => (
@@ -68,7 +74,7 @@ const Project = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="p-4 sm:p-6 rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300 flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl bg-gray-800/40 border border-indigo-500/40 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] hover:scale-105 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div
@@ -76,10 +82,14 @@ const Project = () => {
                 >
                   {project.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 text-center">{project.title}</h3>
-                <p className="text-gray-300 text-xs sm:text-sm text-center leading-relaxed">{project.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 text-center">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-xs sm:text-sm text-center leading-relaxed">
+                  {project.description}
+                </p>
               </div>
-              
+
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
                 <a

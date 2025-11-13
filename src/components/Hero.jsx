@@ -35,10 +35,13 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 px-8 pt-24 md:pt-28 text-white"
+      className="relative min-h-screen flex items-center justify-center bg-slate-950 px-8 pt-24 md:pt-28 text-white overflow-hidden"
     >
-      {/* Background Glow (merged with About section style) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1e293b_0%,_transparent_70%)] opacity-50"></div>
+      {/* Professional Grid Pattern Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      
+      {/* Subtle Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
 
       <div className="relative max-w-7xl w-full grid md:grid-cols-2 items-center gap-12">
         {/* Left Content */}

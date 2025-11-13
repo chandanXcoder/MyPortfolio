@@ -6,10 +6,13 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white px-6 pt-20 pb-0"
+      className="relative flex items-center justify-center min-h-screen bg-slate-950 text-white px-6 pt-20 pb-0 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1e293b,_transparent_70%)] opacity-50 pointer-events-none"></div>
+      {/* Professional Grid Pattern Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      
+      {/* Subtle Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
 
       <div className="relative max-w-6xl w-full grid md:grid-cols-2 items-center gap-12">
         {/* Left Side - Image */}
@@ -40,15 +43,15 @@ const AboutMe = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            I’m <span className="text-indigo-400 font-semibold">Chandan Verma</span>,  
+            I'm <span className="text-indigo-400 font-semibold">Chandan Verma</span>,  
             a first-year <span className="text-indigo-400 font-semibold">B.Tech Computer Science</span> student  
             at <span className="text-indigo-400">Invertis University, Bareilly (U.P.)</span>.
           </p>
 
           <p className="text-md md:text-lg text-gray-400 leading-relaxed">
-            I’ve always been passionate about technology and creativity, and I believe in
+            I've always been passionate about technology and creativity, and I believe in
             using both to solve problems and create meaningful experiences. My journey as a
-            developer is not just about learning code — it’s about experimenting, building,
+            developer is not just about learning code — it's about experimenting, building,
             and growing every day.
           </p>
 
@@ -60,7 +63,7 @@ const AboutMe = () => {
 
           <p className="text-md md:text-lg text-gray-400 leading-relaxed">
             Every project I take on is an opportunity to learn something new and make an impact,
-            no matter how small. I’m dedicated to my growth, driven by curiosity, and motivated
+            no matter how small. I'm dedicated to my growth, driven by curiosity, and motivated
             by the endless possibilities that technology offers.
           </p>
         </motion.div>
@@ -70,4 +73,3 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
-

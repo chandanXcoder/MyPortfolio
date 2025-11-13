@@ -35,33 +35,36 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-16 px-6 bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center"
+      className="relative flex items-center justify-center min-h-screen bg-slate-950 text-white px-6 py-20 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1e293b_0%,_transparent_50%)] opacity-40"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#312e81_0%,_transparent_50%)] opacity-30"></div>
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
 
-      <div className="relative max-w-2xl w-full">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-transparent to-indigo-950/40"></div>
+
+      <div className="relative max-w-2xl w-full z-10">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 mb-4 sm:mb-6"
+          className="text-center text-3xl md:text-4xl font-extrabold 
+          text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 mb-8"
         >
           Get in Touch
         </motion.h2>
 
         {/* Contact Form */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="bg-gray-800/40 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-gray-700 shadow-lg"
+          className="bg-gray-900/60 backdrop-blur-lg rounded-2xl p-6 border border-gray-700 shadow-2xl"
         >
-          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
               name="name"
@@ -69,7 +72,7 @@ const Contact = () => {
               required
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all text-sm sm:text-base"
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
             />
             <input
               type="email"
@@ -78,7 +81,7 @@ const Contact = () => {
               required
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all text-sm sm:text-base"
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
             />
             <input
               type="text"
@@ -87,7 +90,7 @@ const Contact = () => {
               required
               value={formData.subject}
               onChange={handleInputChange}
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all text-sm sm:text-base"
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
             />
             <textarea
               name="message"
@@ -96,7 +99,7 @@ const Contact = () => {
               required
               value={formData.message}
               onChange={handleInputChange}
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all resize-none text-sm sm:text-base"
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all resize-none"
             ></textarea>
 
             <motion.button
@@ -104,7 +107,7 @@ const Contact = () => {
               disabled={isSubmitting}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className={`w-full py-2 sm:py-3 rounded-lg font-semibold text-white transition-all duration-300 text-sm sm:text-base ${
+              className={`w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 ${
                 isSubmitting
                   ? "bg-gray-600 cursor-not-allowed"
                   : "bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-90 shadow-lg"
@@ -117,28 +120,28 @@ const Contact = () => {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-green-400 text-sm mt-3"
+                className="text-green-400 text-sm mt-3 text-center"
               >
                 ✓ Message sent successfully!
               </motion.p>
             )}
           </form>
         </motion.div>
-        
-        {/* Social Icon */}
+
+        {/* Social Icons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-4 sm:gap-6 mt-6 sm:mt-8"
+          className="flex justify-center gap-6 mt-8"
         >
           {[
-            { icon: <Github size={20} />, link: "https://github.com/" },
-            { icon: <Linkedin size={20} />, link: "https://linkedin.com/" },
-            { icon: <Twitter size={20} />, link: "https://twitter.com/" },
-            { icon: <Instagram size={20} />, link: "https://instagram.com/" },
-            { icon: <Mail size={20} />, link: "mailto:youremail@example.com" },
+            { icon: <Github size={22} />, link: "https://github.com/" },
+            { icon: <Linkedin size={22} />, link: "https://linkedin.com/" },
+            { icon: <Twitter size={22} />, link: "https://twitter.com/" },
+            { icon: <Instagram size={22} />, link: "https://instagram.com/" },
+            { icon: <Mail size={22} />, link: "mailto:youremail@example.com" },
           ].map((item, index) => (
             <motion.a
               key={index}

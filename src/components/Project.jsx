@@ -45,15 +45,15 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen bg-slate-950 py-20 px-6 flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-slate-950 text-white px-6 py-20 overflow-hidden"
     >
-      {/* 🩵 Grid Background */}
+      {/* Background Grid Pattern (same as AboutMe) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
 
-      {/* 🔷 Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-transparent to-indigo-950/50"></div>
+      {/* Subtle Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
 
-      <div className="relative max-w-6xl w-full text-center text-white">
+      <div className="relative max-w-6xl w-full text-center">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ const Project = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="p-5 sm:p-6 rounded-2xl bg-gray-800/40 border border-indigo-500/40 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] hover:scale-105 transition-all duration-300 flex flex-col justify-between"
+              className="p-4 sm:p-6 rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300 flex flex-col justify-between backdrop-blur-sm"
             >
               <div>
                 <div

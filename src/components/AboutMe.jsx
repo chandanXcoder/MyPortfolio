@@ -41,6 +41,7 @@ const AboutMe = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-indigo-400">
             About Me
           </h2>
+          ver
 
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
             I'm <span className="text-indigo-400 font-semibold">Chandan Verma</span>,  

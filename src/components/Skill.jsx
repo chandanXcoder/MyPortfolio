@@ -17,6 +17,7 @@ const skills = [
   { name: "JavaScript", icon: <FileCode2 size={32} />, color: "from-yellow-400 to-amber-500" },
   { name: "Node.js", icon: <Database size={32} />, color: "from-green-500 to-emerald-600" },
   { name: "React.js", icon: <Code2 size={32} />, color: "from-sky-400 to-blue-600" },
+
   { name: "Tailwind CSS", icon: <TerminalSquare size={32} />, color: "from-teal-400 to-cyan-600" },
   { name: "Git", icon: <GitBranch size={32} />, color: "from-red-400 to-orange-600" },
   { name: "GitHub", icon: <Github size={32} />, color: "from-gray-600 to-gray-900" },

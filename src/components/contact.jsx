@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,33 +15,47 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+    emailjs
+      .send(
+        "service_95yquh3",                 // ✅ YOUR SERVICE ID
+        "__ejs-test-mail-service__",        // ✅ YOUR TEMPLATE ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "GXwNWdXSVXgTdWUHp"                 // ✅ YOUR PUBLIC KEY
+      )
+      .then(
+        () => {
+          setIsSubmitting(false);
+          setSubmitStatus("success");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          setTimeout(() => setSubmitStatus(null), 5000);
+        },
+        (error) => {
+          console.error(error);
+          setIsSubmitting(false);
+          setSubmitStatus("error");
+        }
+      );
   };
 
   return (
     <section
       id="contact"
-      className="relative flex items-center justify-center min-h-screen bg-slate-950 text-white px-6 py-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-slate-950 text-white px-6 py-20 overflow-hidden"
     >
-      {/* Background Grid Pattern */}
+      {/* Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
-
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-transparent to-indigo-950/40"></div>
 
       <div className="relative max-w-2xl w-full z-10">
@@ -50,13 +65,12 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center text-3xl md:text-4xl font-extrabold 
-          text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 mb-8"
+          className="text-center text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 mb-8"
         >
           Get in Touch
         </motion.h2>
 
-        {/* Contact Form */}
+        {/* Form */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,8 +86,9 @@ const Contact = () => {
               required
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg"
             />
+
             <input
               type="email"
               name="email"
@@ -81,17 +96,23 @@ const Contact = () => {
               required
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg"
             />
-            <input
-              type="text"
+
+            <select
               name="subject"
-              placeholder="Subject *"
               required
               value={formData.subject}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
-            />
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-gray-300"
+            >
+              <option value="">Select Subject</option>
+              <option value="Freelance Work">Freelance Work</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="Job Opportunity">Job Opportunity</option>
+              <option value="Other">Other</option>
+            </select>
+
             <textarea
               name="message"
               placeholder="Your Message *"
@@ -99,63 +120,45 @@ const Contact = () => {
               required
               value={formData.message}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all resize-none"
-            ></textarea>
+              className="w-full px-4 py-3 bg-gray-950/70 border border-gray-700 rounded-lg resize-none"
+            />
 
             <motion.button
               type="submit"
               disabled={isSubmitting}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className={`w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 ${
+              className={`w-full py-3 rounded-lg font-semibold transition-all ${
                 isSubmitting
                   ? "bg-gray-600 cursor-not-allowed"
-                  : "bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-90 shadow-lg"
+                  : "bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-90"
               }`}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
 
             {submitStatus === "success" && (
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-green-400 text-sm mt-3 text-center"
-              >
-                ✓ Message sent successfully!
-              </motion.p>
+              <p className="text-green-400 text-sm text-center">
+                ✅ Message sent successfully!
+              </p>
+            )}
+
+            {submitStatus === "error" && (
+              <p className="text-red-400 text-sm text-center">
+                ❌ Something went wrong. Please try again.
+              </p>
             )}
           </form>
         </motion.div>
 
         {/* Social Icons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex justify-center gap-6 mt-8"
-        >
-          {[
-            { icon: <Github size={22} />, link: "https://github.com/" },
-            { icon: <Linkedin size={22} />, link: "https://linkedin.com/" },
-            { icon: <Twitter size={22} />, link: "https://twitter.com/" },
-            { icon: <Instagram size={22} />, link: "https://instagram.com/" },
-            { icon: <Mail size={22} />, link: "mailto:youremail@example.com" },
-          ].map((item, index) => (
-            <motion.a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.3, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-gray-400 hover:text-indigo-400 transition-colors"
-            >
-              {item.icon}
-            </motion.a>
-          ))}
-        </motion.div>
+        <div className="flex justify-center gap-6 mt-8 text-gray-400">
+          <a href="https://github.com/" target="_blank" rel="noreferrer"><Github /></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noreferrer"><Linkedin /></a>
+          <a href="https://twitter.com/" target="_blank" rel="noreferrer"><Twitter /></a>
+          <a href="https://instagram.com/" target="_blank" rel="noreferrer"><Instagram /></a>
+          <a href="mailto:yourgmail@gmail.com"><Mail /></a>
+        </div>
       </div>
     </section>
   );

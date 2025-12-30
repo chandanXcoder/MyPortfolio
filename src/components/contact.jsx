@@ -24,25 +24,31 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_95yquh3",                 // ✅ YOUR SERVICE ID
-        "__ejs-test-mail-service__",        // ✅ YOUR TEMPLATE ID
+        "service_95yquh3",          // ✅ Service ID
+        "template_xx3ck1i",         // ✅ YOUR TEMPLATE ID
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        "GXwNWdXSVXgTdWUHp"                 // ✅ YOUR PUBLIC KEY
+        "GXwNWdXSVXgTdWUHp"          // ✅ Public Key
       )
       .then(
         () => {
           setIsSubmitting(false);
           setSubmitStatus("success");
-          setFormData({ name: "", email: "", subject: "", message: "" });
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+
           setTimeout(() => setSubmitStatus(null), 5000);
         },
         (error) => {
-          console.error(error);
+          console.error("EmailJS Error:", error);
           setIsSubmitting(false);
           setSubmitStatus("error");
         }

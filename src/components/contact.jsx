@@ -39,7 +39,7 @@ const Contact = () => {
           setIsSubmitting(false);
           setSubmitStatus("success");
           setFormData({ name: "", email: "", subject: "", message: "" });
-          setTimeout(() => setSubmitStatus(null), 5000);
+          setTimeout(() => setSubmitStatus(null),   5000);
         },
         (error) => {
           console.error(error);

@@ -7,7 +7,7 @@ const projects = [
     title: "Takshsila Library",
     description:
       "A comprehensive digital library platform with book management and user authentication system.",
-    icon: <BookOpen size={26} />,
+    icon: <BookOpen size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://takshsila-library.vercel.app/",
   },
@@ -15,7 +15,7 @@ const projects = [
     title: "Pradhan Mantri Awas Yojana",
     description:
       "A clean and simple website showcasing profile details, work experience, contact information, and testimonials.",
-    icon: <Home size={26} />,
+    icon: <Home size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-websites.netlify.app/",
   },
@@ -23,7 +23,7 @@ const projects = [
     title: "The Hungry Snake Game",
     description:
       "A classic Snake Game. Control the snake, eat food to grow, and avoid collisions.",
-    icon: <Gamepad2 size={26} />,
+    icon: <Gamepad2 size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-team.netlify.app/",
   },
@@ -31,7 +31,7 @@ const projects = [
     title: "Hair Cut Zone (Bareilly)",
     description:
       "A modern salon website with booking features and a customer-friendly UI.",
-    icon: <Scissors size={26} />,
+    icon: <Scissors size={28} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://trim-trend.vercel.app/",
   },
@@ -41,19 +41,20 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen flex items-center justify-center bg-white text-black px-6 py-24 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-[#f6f9fc] px-6 overflow-hidden"
     >
-      {/* Subtle Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      {/* Soft Background Shapes */}
+      <div className="absolute left-0 top-1/3 w-[480px] h-[480px] bg-black/5 rounded-full blur-3xl"></div>
+      <div className="absolute right-0 bottom-1/4 w-[360px] h-[360px] bg-black/5 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-6xl w-full text-center">
+      <div className="relative max-w-7xl w-full text-center">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold mb-16 tracking-tight"
+          className="text-4xl md:text-5xl font-extrabold mb-16 tracking-tight text-black"
         >
           My Projects
         </motion.h2>
@@ -63,11 +64,11 @@ const Project = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-white border border-black/20 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between"
+              className="flex flex-col justify-between bg-white border border-black/20 rounded-2xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 p-6"
             >
               <div>
                 {/* Icon */}
@@ -76,7 +77,7 @@ const Project = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 text-center">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 text-center text-black">
                   {project.title}
                 </h3>
 

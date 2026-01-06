@@ -51,19 +51,20 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center justify-center bg-white text-black px-6 py-24 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-[#f6f9fc] px-6 overflow-hidden"
     >
-      {/* Subtle Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      {/* Soft Background Shapes */}
+      <div className="absolute left-0 top-1/3 w-[480px] h-[480px] bg-black/5 rounded-full blur-3xl"></div>
+      <div className="absolute right-0 bottom-1/4 w-[360px] h-[360px] bg-black/5 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-2xl w-full">
+      <div className="relative max-w-2xl w-full text-center">
         {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center text-4xl md:text-5xl font-extrabold mb-10 tracking-tight"
+          className="text-4xl md:text-5xl font-extrabold mb-12 text-black tracking-tight"
         >
           Get in Touch
         </motion.h2>
@@ -74,7 +75,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-6 sm:p-8 border border-black/20 shadow-sm"
+          className="bg-white rounded-2xl p-6 sm:p-8 border border-black/20 shadow-md hover:shadow-lg transition-all"
         >
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
@@ -136,13 +137,13 @@ const Contact = () => {
             </motion.button>
 
             {submitStatus === "success" && (
-              <p className="text-green-600 text-sm text-center">
+              <p className="text-green-600 text-sm text-center mt-2">
                 ✅ Message sent successfully!
               </p>
             )}
 
             {submitStatus === "error" && (
-              <p className="text-red-600 text-sm text-center">
+              <p className="text-red-600 text-sm text-center mt-2">
                 ❌ Something went wrong. Please try again.
               </p>
             )}
@@ -151,11 +152,44 @@ const Contact = () => {
 
         {/* Social Icons */}
         <div className="flex justify-center gap-6 mt-10 text-gray-700">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-black"><Github /></a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-black"><Linkedin /></a>
-          <a href="https://twitter.com/" target="_blank" rel="noreferrer" className="hover:text-black"><Twitter /></a>
-          <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="hover:text-black"><Instagram /></a>
-          <a href="mailto:yourgmail@gmail.com" className="hover:text-black"><Mail /></a>
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-black transition-colors"
+          >
+            <Github size={24} />
+          </a>
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-black transition-colors"
+          >
+            <Linkedin size={24} />
+          </a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-black transition-colors"
+          >
+            <Twitter size={24} />
+          </a>
+          <a
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-black transition-colors"
+          >
+            <Instagram size={24} />
+          </a>
+          <a
+            href="mailto:yourgmail@gmail.com"
+            className="hover:text-black transition-colors"
+          >
+            <Mail size={24} />
+          </a>
         </div>
       </div>
     </section>

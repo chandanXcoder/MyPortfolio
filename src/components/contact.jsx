@@ -38,6 +38,7 @@ const Contact = () => {
         () => {
           setIsSubmitting(false);
           setSubmitStatus("success");
+<<<<<<< HEAD
           setFormData({
             name: "",
             email: "",
@@ -46,6 +47,10 @@ const Contact = () => {
           });
 
           setTimeout(() => setSubmitStatus(null), 5000);
+=======
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          setTimeout(() => setSubmitStatus(null),   5000);
+>>>>>>> f1a76c610021a056d44a2461bebd9b40525b11ce
         },
         (error) => {
           console.error("EmailJS Error:", error);

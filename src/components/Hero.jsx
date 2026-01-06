@@ -35,15 +35,13 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-slate-950 px-8 pt-24 md:pt-28 text-white overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-white px-8 pt-24 md:pt-28 text-black overflow-hidden"
     >
-      {/* Professional Grid Pattern Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
-      
-      {/* Subtle Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
       <div className="relative max-w-7xl w-full grid md:grid-cols-2 items-center gap-12">
+
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -52,9 +50,14 @@ const Hero = () => {
           viewport={{ once: true }}
           className="text-center md:text-left"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
             Welcome to my portfolio
           </h1>
+
+          <p className="text-lg md:text-xl text-gray-700 max-w-xl">
+            I design and build clean, modern, and scalable web experiences with
+            a strong focus on performance and user experience.
+          </p>
         </motion.div>
 
         {/* Right Content */}
@@ -66,7 +69,7 @@ const Hero = () => {
           className="flex flex-col items-center justify-center text-center"
         >
           {/* Profile Image */}
-          <div className="w-56 h-56 md:w-64 md:h-64 rounded-full shadow-lg overflow-hidden mb-6 border border-indigo-500/40 hover:scale-105 transition-transform duration-500">
+          <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden mb-6 border border-black/20 shadow-sm hover:scale-105 transition-transform duration-500">
             <img
               src={chandanImage}
               alt="Chandan Verma"
@@ -75,29 +78,30 @@ const Hero = () => {
           </div>
 
           {/* Name */}
-          <p className="text-4xl md:text-5xl font-bold text-white mb-3">
-            I'm <span className="text-indigo-400">Chandan Verma</span>
+          <p className="text-4xl md:text-5xl font-bold mb-3">
+            I'm <span className="font-extrabold">Chandan Verma</span>
           </p>
 
-          {/* Typing Animation Role */}
-          <p className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent h-10">
+          {/* Typing Animation */}
+          <p className="text-2xl md:text-3xl font-semibold text-gray-800 h-10">
             {displayText}
-            <span className="animate-pulse text-white">|</span>
+            <span className="animate-pulse">|</span>
           </p>
 
           {/* Buttons */}
-          <div className="flex gap-4 mt-6">
+          <div className="flex gap-4 mt-8">
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-90 text-white text-lg font-medium shadow-md transition-all"
+              className="px-7 py-3 rounded-lg bg-black text-white text-lg font-medium hover:bg-gray-800 transition-all"
             >
               Resume
             </a>
+
             <a
               href="#contact"
-              className="px-6 py-3 rounded-lg border border-gray-500 text-gray-200 hover:bg-gray-800 transition-all text-lg font-medium"
+              className="px-7 py-3 rounded-lg border border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all"
             >
               Contact Me
             </a>
@@ -107,6 +111,5 @@ const Hero = () => {
     </section>
   );
 };
-
 
 export default Hero;

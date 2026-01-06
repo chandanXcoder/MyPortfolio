@@ -7,37 +7,33 @@ const projects = [
     title: "Takshsila Library",
     description:
       "A comprehensive digital library platform with book management and user authentication system.",
-    icon: <BookOpen size={28} />,
+    icon: <BookOpen size={26} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://takshsila-library.vercel.app/",
-    color: "from-blue-500 to-cyan-600",
   },
   {
     title: "Pradhan Mantri Awas Yojana",
     description:
-      "A clean and simple personal website showcasing profile details, work experience, contact information, and testimonials.",
-    icon: <Home size={28} />,
+      "A clean and simple website showcasing profile details, work experience, contact information, and testimonials.",
+    icon: <Home size={26} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-websites.netlify.app/",
-    color: "from-orange-500 to-red-600",
   },
   {
     title: "The Hungry Snake Game",
     description:
-      "A classic Snake Game. Control the snake with arrow keys, eat food to grow, and avoid crashing into walls or yourself.",
-    icon: <Gamepad2 size={28} />,
+      "A classic Snake Game. Control the snake, eat food to grow, and avoid collisions.",
+    icon: <Gamepad2 size={26} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://chandan-team.netlify.app/",
-    color: "from-green-400 to-emerald-600",
   },
   {
-    title: "Hair Cut Zone (Baraily)",
+    title: "Hair Cut Zone (Bareilly)",
     description:
-      "A modern and stylish salon website with booking features, showcasing services and customer-friendly UI.",
-    icon: <Scissors size={28} />,
+      "A modern salon website with booking features and a customer-friendly UI.",
+    icon: <Scissors size={26} />,
     github: "https://github.com/chandanXcoder",
     demo: "https://trim-trend.vercel.app/",
-    color: "from-pink-500 to-rose-600",
   },
 ];
 
@@ -45,13 +41,10 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen flex items-center justify-center bg-slate-950 text-white px-6 py-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-white text-black px-6 py-24 overflow-hidden"
     >
-      {/* Background Grid Pattern (same as AboutMe) */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
-
-      {/* Subtle Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
       <div className="relative max-w-6xl w-full text-center">
         {/* Heading */}
@@ -60,7 +53,7 @@ const Project = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-14 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-extrabold mb-16 tracking-tight"
         >
           My Projects
         </motion.h2>
@@ -70,41 +63,45 @@ const Project = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.85 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-4 sm:p-6 rounded-2xl bg-gray-800/40 border border-gray-700 shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.8)] transition-all duration-300 flex flex-col justify-between backdrop-blur-sm"
+              className="p-6 rounded-2xl bg-white border border-black/20 shadow-sm hover:shadow-md hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div
-                  className={`w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${project.color} text-white mb-3 sm:mb-4 mx-auto`}
-                >
+                {/* Icon */}
+                <div className="w-14 h-14 flex items-center justify-center rounded-xl border border-black/20 mb-4 mx-auto text-black">
                   {project.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 text-center">
+
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 text-center">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-xs sm:text-sm text-center leading-relaxed">
+
+                {/* Description */}
+                <p className="text-gray-700 text-sm text-center leading-relaxed">
                   {project.description}
                 </p>
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
+              <div className="flex flex-col sm:flex-row justify-center gap-3 mt-6">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 sm:px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors duration-300"
+                  className="px-4 py-2 rounded-lg border border-black text-black text-sm font-medium flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all"
                 >
                   <Github size={16} /> Code
                 </a>
+
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 sm:px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm transition-colors duration-300 text-center"
+                  className="px-4 py-2 rounded-lg bg-black text-white text-sm font-medium hover:bg-gray-800 transition-all"
                 >
                   View Project
                 </a>
@@ -115,5 +112,6 @@ const Project = () => {
       </div>
     </section>
   );
-};  
+};
+
 export default Project;

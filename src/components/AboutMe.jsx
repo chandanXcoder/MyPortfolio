@@ -6,15 +6,13 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center min-h-screen bg-slate-950 text-white px-6 pt-20 pb-0 overflow-hidden"
+      className="relative flex items-center justify-center min-h-screen bg-white text-black px-6 pt-24 pb-12 overflow-hidden"
     >
-      {/* Professional Grid Pattern Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
-      
-      {/* Subtle Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
-      <div className="relative max-w-6xl w-full grid md:grid-cols-2 items-center gap-12">
+      <div className="relative max-w-6xl w-full grid md:grid-cols-2 items-center gap-14">
+
         {/* Left Side - Image */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -26,7 +24,7 @@ const AboutMe = () => {
           <img
             src={chandImage}
             alt="Chandan Verma"
-            className="w-80 h-96 object-cover shadow-2xl rounded-2xl border border-indigo-500/40 hover:scale-105 transition-transform duration-500"
+            className="w-80 h-96 object-cover rounded-2xl border border-black/20 shadow-sm hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
 
@@ -38,33 +36,32 @@ const AboutMe = () => {
           viewport={{ once: true }}
           className="space-y-6 text-left"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-indigo-400">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
             About Me
           </h2>
-           
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            I'm <span className="text-indigo-400 font-semibold">Chandan Verma</span>,  
-            a first-year <span className="text-indigo-400 font-semibold">B.Tech Computer Science</span> student  
-            at <span className="text-indigo-400">Invertis University, Bareilly (U.P.)</span>.
+
+          <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
+            I'm <span className="font-semibold text-black">Chandan Verma</span>,  
+            a first-year <span className="font-semibold text-black">B.Tech Computer Science</span> student  
+            at <span className="font-semibold text-black">Invertis University, Bareilly (U.P.)</span>.
           </p>
 
-          <p className="text-md md:text-lg text-gray-400 leading-relaxed">
-            I've always been passionate about technology and creativity, and I believe in
-            using both to solve problems and create meaningful experiences. My journey as a
-            developer is not just about learning code — it's about experimenting, building,
-            and growing every day.
+          <p className="text-md md:text-lg text-gray-700 leading-relaxed">
+            I’ve always been passionate about technology and creativity. For me, development
+            isn’t just about writing code — it’s about building meaningful, efficient, and
+            user-focused experiences through continuous learning and experimentation.
           </p>
 
-          <p className="text-md md:text-lg text-gray-400 leading-relaxed">
-            I approach challenges with curiosity and determination, knowing that consistency
-            and hard work are the keys to progress. I believe in turning ideas into reality and
-            constantly pushing myself to improve, explore, and innovate.
+          <p className="text-md md:text-lg text-gray-700 leading-relaxed">
+            I approach challenges with curiosity and discipline, believing that consistency
+            and problem-solving are the foundation of long-term growth. Every challenge pushes
+            me to improve my skills and mindset.
           </p>
 
-          <p className="text-md md:text-lg text-gray-400 leading-relaxed">
-            Every project I take on is an opportunity to learn something new and make an impact,
-            no matter how small. I'm dedicated to my growth, driven by curiosity, and motivated
-            by the endless possibilities that technology offers.
+          <p className="text-md md:text-lg text-gray-700 leading-relaxed">
+            Every project I work on is a learning opportunity. I am driven by curiosity,
+            motivated by progress, and committed to turning ideas into real-world solutions
+            using modern web technologies.
           </p>
         </motion.div>
       </div>

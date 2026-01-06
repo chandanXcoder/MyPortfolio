@@ -9,31 +9,30 @@ import {
   Github,
   Layers,
   TerminalSquare,
+  Flame,
 } from "lucide-react";
 
 const skills = [
-  { name: "HTML", icon: <Globe size={32} />, color: "from-orange-500 to-red-500" },
-  { name: "CSS", icon: <Layers size={32} />, color: "from-blue-500 to-cyan-500" },
-  { name: "JavaScript", icon: <FileCode2 size={32} />, color: "from-yellow-400 to-amber-500" },
-  { name: "Node.js", icon: <Database size={32} />, color: "from-green-500 to-emerald-600" },
-  { name: "React.js", icon: <Code2 size={32} />, color: "from-sky-400 to-blue-600" },
+  { name: "HTML", icon: <Globe size={30} /> },
+  { name: "CSS", icon: <Layers size={30} /> },
+  { name: "JavaScript", icon: <FileCode2 size={30} /> },
+  { name: "Node.js", icon: <Database size={30} /> },
+  { name: "React.js", icon: <Code2 size={30} /> },
 
-  { name: "Tailwind CSS", icon: <TerminalSquare size={32} />, color: "from-teal-400 to-cyan-600" },
-  { name: "Git", icon: <GitBranch size={32} />, color: "from-red-400 to-orange-600" },
-  { name: "GitHub", icon: <Github size={32} />, color: "from-gray-600 to-gray-900" },
+  { name: "Tailwind CSS", icon: <TerminalSquare size={30} /> },
+  { name: "Git", icon: <GitBranch size={30} /> },
+  { name: "GitHub", icon: <Github size={30} /> },
+  { name: "Firebase", icon: <Flame size={30} /> }, // 🔥 New Skill Added
 ];
 
 const Skill = () => {
   return (
     <section
       id="skills"
-      className="relative flex items-center justify-center min-h-screen bg-slate-950 text-white px-6 py-20 overflow-hidden"
+      className="relative flex items-center justify-center min-h-screen bg-white text-black px-6 py-24 overflow-hidden"
     >
-      {/* Professional Grid Pattern Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
-      
-      {/* Subtle Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-indigo-950/30"></div>
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
       <div className="relative max-w-5xl w-full text-center">
         {/* Heading */}
@@ -42,7 +41,7 @@ const Skill = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-14 text-indigo-400"
+          className="text-4xl md:text-5xl font-extrabold mb-16 tracking-tight"
         >
           My Skills
         </motion.h2>
@@ -52,18 +51,18 @@ const Skill = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="w-full h-28 sm:h-32 md:h-36 flex flex-col items-center justify-center rounded-2xl bg-gray-800/40 border border-indigo-500/40 shadow-2xl hover:scale-105 hover:border-indigo-400 transition-all duration-500"
+              className="w-full h-28 sm:h-32 md:h-36 flex flex-col items-center justify-center rounded-2xl bg-white border border-black/20 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
             >
-              <div
-                className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl bg-gradient-to-br ${skill.color} text-white mb-2 sm:mb-3`}
-              >
+              <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-xl border border-black/20 mb-3 text-black">
                 {skill.icon}
               </div>
-              <p className="text-white font-medium text-sm md:text-base text-center">{skill.name}</p>
+              <p className="font-medium text-sm md:text-base text-center text-gray-800">
+                {skill.name}
+              </p>
             </motion.div>
           ))}
         </div>

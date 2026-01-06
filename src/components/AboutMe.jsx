@@ -4,66 +4,77 @@ import chandImage from "../assets/chand.jpg";
 
 const AboutMe = () => {
   return (
-    <section
-      id="about"
-      className="relative flex items-center justify-center min-h-screen bg-white text-black px-6 pt-24 pb-12 overflow-hidden"
-    >
-      {/* Subtle Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000d_1px,transparent_1px),linear-gradient(to_bottom,#0000000d_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    <section className="relative min-h-screen bg-[#f6f9fc] flex items-center overflow-hidden px-6">
 
-      <div className="relative max-w-6xl w-full grid md:grid-cols-2 items-center gap-14">
+      {/* Soft Background Shapes */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-black/5 rounded-full blur-3xl"></div>
+      <div className="absolute right-0 bottom-1/4 w-[360px] h-[360px] bg-black/5 rounded-full blur-3xl"></div>
 
-        {/* Left Side - Image */}
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-14">
+
+        {/* LEFT IMAGE */}
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex justify-center"
+          className="flex justify-center md:justify-start"
         >
           <img
             src={chandImage}
             alt="Chandan Verma"
-            className="w-80 h-96 object-cover rounded-2xl border border-black/20 shadow-sm hover:scale-105 transition-transform duration-500"
+            className="
+              w-[220px] 
+              md:w-[300px] 
+              lg:w-[320px] 
+              object-cover 
+              rounded-2xl
+              grayscale
+              shadow-md
+              hover:scale-105 
+              transition-transform duration-500
+            "
           />
         </motion.div>
 
-        {/* Right Side - Text */}
+        {/* RIGHT TEXT CONTENT */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="space-y-6 text-left"
+          className="space-y-6"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            About Me
+          <p className="text-sm font-extrabold tracking-widest text-black mb-2">
+            ABOUT ME
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
+            Chandan Verma
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
-            I'm <span className="font-semibold text-black">Chandan Verma</span>,  
-            a first-year <span className="font-semibold text-black">B.Tech Computer Science</span> student  
+          <p className="text-lg text-gray-700">
+            I'm a first-year <span className="font-semibold text-black">B.Tech Computer Science</span> student  
             at <span className="font-semibold text-black">Invertis University, Bareilly (U.P.)</span>.
           </p>
 
-          <p className="text-md md:text-lg text-gray-700 leading-relaxed">
+          <p className="text-md md:text-lg text-gray-700">
             I’ve always been passionate about technology and creativity. For me, development
             isn’t just about writing code — it’s about building meaningful, efficient, and
             user-focused experiences through continuous learning and experimentation.
           </p>
 
-          <p className="text-md md:text-lg text-gray-700 leading-relaxed">
+          <p className="text-md md:text-lg text-gray-700">
             I approach challenges with curiosity and discipline, believing that consistency
             and problem-solving are the foundation of long-term growth. Every challenge pushes
             me to improve my skills and mindset.
           </p>
 
-          <p className="text-md md:text-lg text-gray-700 leading-relaxed">
+          <p className="text-md md:text-lg text-gray-700">
             Every project I work on is a learning opportunity. I am driven by curiosity,
             motivated by progress, and committed to turning ideas into real-world solutions
             using modern web technologies.
           </p>
         </motion.div>
+
       </div>
     </section>
   );

@@ -15,7 +15,6 @@ const Navbar = () => {
     { name: "Contact", href: "#contact" },
   ];
 
-  // Scroll shadow effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -24,7 +23,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Active section detect
   useEffect(() => {
     const sections = navLinks.map((l) =>
       document.querySelector(l.href)
@@ -47,8 +45,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-white transition-all ${
-        scrolled ? "shadow-md" : ""
+      className={`fixed top-0 left-0 w-full z-50 bg-black transition-all ${
+        scrolled ? "shadow-lg shadow-black/40" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
@@ -58,7 +56,7 @@ const Navbar = () => {
           href="#hero"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-extrabold text-black tracking-tight"
+          className="text-2xl font-extrabold text-white tracking-tight"
         >
           Chandan Verma
         </motion.a>
@@ -74,17 +72,16 @@ const Navbar = () => {
               className={`relative font-medium transition text-sm lg:text-base
                 ${
                   active === link.href
-                    ? "text-black"
-                    : "text-gray-600 hover:text-black"
+                    ? "text-white"
+                    : "text-gray-300 hover:text-white"
                 }`}
             >
               {link.name}
 
-              {/* Active underline */}
               {active === link.href && (
                 <motion.span
                   layoutId="underline"
-                  className="absolute left-0 -bottom-1 h-[2px] w-full bg-black"
+                  className="absolute left-0 -bottom-1 h-[2px] w-full bg-white"
                 />
               )}
             </motion.a>
@@ -94,7 +91,7 @@ const Navbar = () => {
         {/* Mobile Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-black p-2"
+          className="md:hidden text-white p-2"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -108,7 +105,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-white border-t border-black/10"
+            className="md:hidden bg-black border-t border-white/10"
           >
             <div className="flex flex-col items-center py-4 gap-3">
               {navLinks.map((link, index) => (
@@ -122,8 +119,8 @@ const Navbar = () => {
                   className={`w-full text-center py-2 font-medium transition
                     ${
                       active === link.href
-                        ? "text-black bg-gray-100"
-                        : "text-gray-600 hover:text-black hover:bg-gray-100"
+                        ? "text-white bg-white/10"
+                        : "text-gray-300 hover:text-white hover:bg-white/10"
                     }`}
                 >
                   {link.name}

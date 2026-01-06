@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import chandanImage from "../assets/chandan.jpg";
+import chandanImage from "../assets/developer2.png";
 
 const Hero = () => {
   return (
@@ -56,8 +56,8 @@ const Hero = () => {
             alt="Chandan Verma"
             className="
               w-[340px] 
-              md:w-[440px] 
-              lg:w-[480px]
+              md:w-[740px] 
+              lg:w-[780px]
               object-cover 
               grayscale
               shadow-2xl

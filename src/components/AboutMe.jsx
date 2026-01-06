@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import chandImage from "../assets/chand.jpg";
+import chandImage from "../assets/developer.png";
 
 const AboutMe = () => {
   return (
@@ -23,9 +23,9 @@ const AboutMe = () => {
             src={chandImage}
             alt="Chandan Verma"
             className="
-              w-[220px] 
-              md:w-[300px] 
-              lg:w-[320px] 
+              w-[250px] 
+              md:w-[700px] 
+              lg:w-[720px] 
               object-cover 
               rounded-2xl
               grayscale

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-t from-black via-gray-900 to-gray-900 text-white py-12 px-6">
       {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#1e293b_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#1e293b_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
       
       <div className="relative max-w-7xl mx-auto">
         {/* Main Footer Content */}

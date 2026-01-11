@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import chandanImage from "../assets/chandan.jpg";
 
+
+
 const roles = ["Web Developer", "Open Source Contributor"];
 
 const Hero = () => {
